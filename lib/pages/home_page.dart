@@ -6,6 +6,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:newproject/components/user_posts.dart';
 import 'user_profile.dart';
 import 'package:newproject/main.dart';
+import 'the_posts.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -70,29 +71,9 @@ class _HomePageState extends State<HomePage> {
                     child: PostTextField(
                       hintText: "What's on your mind?",
                       controller: postController,
-                    ),
-                  ),
-                  IconButton(
-                    onPressed: () {
-                      if (postController.text.isNotEmpty) {
-                        userPosts.add({
-                          'username': currentUser.email,
-                          'post': postController.text,
-                          'TimeStamp': Timestamp.now(),
-                          'Likes': [],
-                        });
-                        postController.clear();
-                      } else {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text("Please enter a post"),
-                          ),
-                        );
-                      }
-                    },
-                    icon: Icon(
-                      Icons.add_box_rounded,
-                      color: Theme.of(context).colorScheme.secondary,
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => Posts()));
+                      },
                     ),
                   ),
                 ],

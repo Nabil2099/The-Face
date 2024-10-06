@@ -55,16 +55,19 @@ class PostTextField extends StatelessWidget {
   String hintText;
   TextEditingController controller;
   bool obscureText;
+  Function()? onTap;
   PostTextField({
     required this.hintText,
     required this.controller,
     this.obscureText = false,
+    required this.onTap,
   });
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
       child: TextFormField(
+        onTap: onTap,
         cursorColor: Theme.of(context).colorScheme.secondary,
         style: TextStyle(color: Theme.of(context).colorScheme.primary),
         controller: controller,
