@@ -24,27 +24,3 @@ class _PostsState extends State<Posts> {
     );
   }
 }
-
-// IconButton(
-// onPressed: () {
-// if (postController.text.isNotEmpty) {
-// userPosts.add({
-// 'username': currentUser.email,
-// 'post': postController.text,
-// 'TimeStamp': Timestamp.now(),
-// 'Likes': [],
-// });
-// postController.clear();
-// } else {
-// ScaffoldMessenger.of(context).showSnackBar(
-// const SnackBar(
-// content: Text("Please enter a post"),
-// ),
-// );
-// }
-// },
-// icon: Icon(
-// Icons.add_box_rounded,
-// color: Theme.of(context).colorScheme.secondary,
-// ),
-// ),

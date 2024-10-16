@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:newproject/components/buttons.dart';
 import 'package:newproject/components/drawer.dart';
 import 'package:newproject/components/text_field.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -68,14 +69,12 @@ class _HomePageState extends State<HomePage> {
               Row(
                 children: [
                   Expanded(
-                    child: PostTextField(
-                      hintText: "What's on your mind?",
-                      controller: postController,
-                      onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => Posts()));
-                      },
+                    child: PostButton(
+                      onPressed:
+                      () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => Posts())),
+                      text: "What's on your mind?",
+                        ),
                     ),
-                  ),
                 ],
               ),
               Expanded(
